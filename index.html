@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    #map {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100vw;
+      height: 100vh;
+      filter: blur(2px) brightness(0.8);
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <div class="container">
+    <h1>🌦️ Weather Forecast</h1>
+    <form method="POST">
+      <input type="text" name="city" placeholder="Enter city" required>
+      <button type="submit">Get Weather</button>
+    </form>
+
+    {% if weather %}
+    <div class="weather-card">
+      <h2>{{ weather.city }}</h2>
+      <div class="temperature">{{ weather.temperature }}°C</div>
+      <div class="description">{{ weather.description }}</div>
+      <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather icon">
+    </div>
+   
+    {% elif error %}
+    <div class="alert">{{ error }}</div>
+    {% endif %}
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([23.5, 88.3], 8); // default to Murshidabad
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    if (typeof lat !== "undefined" && typeof lon !== "undefined") {
+      map.setView([lat, lon], 10);
+      L.marker([lat, lon]).addTo(map);
+    }
+  </script>
+</body>
+</html>

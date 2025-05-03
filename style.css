@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fa;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #222;
+  }
+  
+  input[type="text"] {
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width: 60%;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: rgb(238, 237, 156);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .weather-card {
+    background: #22c0c5;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(196, 14, 123, 0.1);
+    text-align: center;
+    width: 320px;
+    margin: 30px auto 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .weather-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .weather-card h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .weather-card .temperature {
+    font-size: 2.2rem;
+    color: #ff5722;
+    margin-top: 10px;
+  }
+  
+  .weather-card .description {
+    font-size: 1rem;
+    font-style: italic;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  .weather-card img {
+    width: 80px;
+    margin-top: 15px;
+  }
+  
+  .alert {
+    background-color: #d82c3a;
+    color: #5c0a12;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      margin: 40px auto;
+      padding: 15px;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+    
+    input[type="text"] {
+      width: 90%;
+    }
+    
+    button {
+      width: 90%;
+    }
+    
+    .weather-card {
+      width: 90%;
+      padding: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .container {
+      margin: 20px auto;
+    }
+    
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+    
+    input[type="text"] {
+      padding: 10px 15px;
+      font-size: 14px;
+    }
+    
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    
+    .weather-card {
+      padding: 15px;
+    }
+    
+    .weather-card h2 {
+      font-size: 20px;
+    }
+    
+    .weather-card .temperature {
+      font-size: 1.8rem;
+    }
+  }
+  
